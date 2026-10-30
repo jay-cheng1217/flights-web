@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Flyawait</title>
+<style>html,body{margin:0;background:transparent}body{display:flex;justify-content:center}</style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+// The phone app's Cloudflare Turnstile (app/src/components/captcha.native.tsx), on the website (/captcha) so
+// the widget sees flyawait.com: the app asks with freshToken() and hears back through
+// ReactNativeWebView.postMessage. Nothing shows unless Cloudflare wants a tap.
+(function () {
+  var key = new URLSearchParams(location.search).get('sitekey') || '';
+  var id = null;
+  function tell(message) {
+    if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(JSON.stringify(message));
+  }
+  window.freshToken = function () {
+    if (!window.turnstile) return tell({ token: null });
+    if (id === null) {
+      id = window.turnstile.render('#box', {
+        sitekey: key,
+        appearance: 'interaction-only',
+        execution: 'execute',
+        callback: function (token) { tell({ token: token }); },
+        'error-callback': function () { tell({ token: null }); },
+        'timeout-callback': function () { tell({ token: null }); },
+        'before-interactive-callback': function () { tell({ show: true }); },
+        'after-interactive-callback': function () { tell({ show: false }); }
+      });
+    } else {
+      window.turnstile.reset(id);
+    }
+    window.turnstile.execute(id);
+  };
+  window.onTurnstileLoad = function () { tell({ ready: true }); };
+})();
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+</body>
+</html>
