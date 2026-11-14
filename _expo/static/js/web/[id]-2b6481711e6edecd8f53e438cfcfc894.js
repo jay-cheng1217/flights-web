@@ -1,0 +1,1 @@
+__d(function(g,r,i,a,m,e,d){"use strict";Object.defineProperty(e,'__esModule',{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return o}});var t=r(d[0]),n=r(d[1]),u=r(d[2]),c=r(d[3]);function o(){const o=(0,t.c)(2),{id:s}=(0,n.useLocalSearchParams)();let f;return o[0]!==s?(f=(0,c.jsx)(u.TripView,{id:s}),o[0]=s,o[1]=f):f=o[1],f}},1511,[1635,85,1023,2]);
