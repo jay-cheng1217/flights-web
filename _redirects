@@ -1,0 +1,13 @@
+/watch/new /watch/new 200
+/watch/edit/* /watch/edit 200
+/watch/* /watch 200
+/itinerary/* /itinerary 200
+/trip/* /trip 200
+/share/plan/* /share/plan 200
+/en/share/plan/* /en/share/plan 200
+/share/trip/* /share/trip 200
+/en/share/trip/* /en/share/trip 200
+/share/group/* /share/group 200
+/en/share/group/* /en/share/group 200
+/share/fare/* /share/fare 200
+/en/share/fare/* /en/share/fare 200
