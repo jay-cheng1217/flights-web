@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/share/*", "/en/share/*", "/card/*", "/app", "/app/", "/.well-known/apple-app-site-association", "/apple-app-site-association", "/.well-known/assetlinks.json"],
+  "exclude": []
+}

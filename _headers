@@ -1,0 +1,14 @@
+# Cloudflare Pages' headers for every page and file of flyawait.com (security review of 2026-11-10; GitHub Pages ignores
+# this file). HTTPS only for a year; no other site may put Flyawait in a frame (the app's captcha page opens in a web
+# view of its own, not a frame); the powers the site never asks for are off (分享 and 複製 use none of them).
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# The skylines the apps read (scripts/skylines-json.mjs): a city drawn reaches them within minutes of a deploy.
+/data/*
+  Cache-Control: public, max-age=600
