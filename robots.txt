@@ -1,0 +1,7 @@
+# Flyawait. Every page carries its own robots meta: until launch all of them say noindex
+# (src/app/+html.tsx), and after it only the public pages listed in the sitemap are indexed.
+User-agent: *
+Disallow: /auth-callback
+Disallow: /watch/edit/
+
+Sitemap: https://flyawait.com/sitemap.xml
