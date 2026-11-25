@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The public pages of flyawait.com; keep in step with PUBLIC_PAGES in src/components/site-head.tsx. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://flyawait.com/</loc></url>
+  <url><loc>https://flyawait.com/watch/new</loc></url>
+  <url><loc>https://flyawait.com/explore</loc></url>
+  <url><loc>https://flyawait.com/flights</loc></url>
+  <url><loc>https://flyawait.com/download</loc></url>
+  <url><loc>https://flyawait.com/privacy</loc></url>
+  <url><loc>https://flyawait.com/terms</loc></url>
+</urlset>
